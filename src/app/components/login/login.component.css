@@ -1,0 +1,85 @@
+h1 {
+    font-size: 50pt;
+    font-family: 'Fredoka One';
+    letter-spacing: 8px;
+    color: #22c0f5;
+    text-shadow: 1px 6px 8px #08076C;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    height: 91.5vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;  
+    justify-content: space-around;
+    height: 100%;
+}
+
+.content form {
+    display: flex;
+    flex-direction: column;
+    flex: 0.3;
+    padding: 2rem;
+
+}
+
+/*FORM INPUT*/
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #22c0f5 !important;
+  }
+
+::ng-deep .mat-form-field-label {
+    color: #97dde8 !important;
+    /* color: #22c0f5 !important; */
+}
+  /* Font color */
+input.mat-input-element {
+    color: #97dde8;
+    /* color: #22c0f5; */
+}
+
+.eye-icon {
+    color: #22c0f5;
+    /* color: #22c0f5; */
+}
+
+/*FORM INPUT*/
+
+.content form mat-form-field:nth-of-type(2) {
+    margin-top: 1rem;
+}
+
+.gallery {
+    flex: 0.7;
+    padding: 1rem;
+
+}
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.btn-container a {
+    text-align: center;
+    margin-top: 1rem;
+    color: #22c0f5;
+    letter-spacing: 1px;
+}
+.btn-login {
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+}
+

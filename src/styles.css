@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+    
+    background: #08076C;
+}
+
+.form-title {
+    color: #22c0f5;
+    font-size: 18pt;
+}
+
+.mat-raised-button[disabled]:not([class*=mat-elevation-z]) {
+    color: rgb(172, 165, 165);
+    background: rgb(63, 81, 181,0.3);
+}
+
+.mat-error {
+    color: #22c0f5;
+}

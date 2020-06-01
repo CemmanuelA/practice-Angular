@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="header">
+        <h1>SOUNDCLOUDIFY</h1>
+    </div>
+    <div class="content">
+        <form autocomplete="off" [formGroup]="loginForm">
+            <mat-form-field  appearance="outline">
+                <mat-label> Enter your email </mat-label>
+                <input matInput formControlName="email" [errorStateMatcher]="myErrorStateMatcher">
+                <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+                    Field required!
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="primary">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [errorStateMatcher]="myErrorStateMatcher">
+                <button mat-icon-button matSuffix (click)="hide = !hide" 
+                        [attr.aria-label]="'Hide password'" 
+                        [attr.aria-pressed]="hide"
+                        type="button">
+                    <mat-icon class="eye-icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="loginForm.controls.password.hasError('required')">
+                    Field required!
+                </mat-error>
+                <mat-error *ngIf="loginForm.controls.password.hasError('minlength')">
+                    Minimun 6 characters
+                </mat-error>
+            </mat-form-field>
+            <div class="btn-container">
+                <button mat-raised-button 
+                        color="primary" 
+                        class="btn-login"
+                        (click)="login()"
+                        type="button"
+                        [disabled]="!loginForm.valid"> Sign In</button>
+                <button mat-raised-button 
+                        color="accent" 
+                        class="btn-login"
+                        [routerLink]="['/sign-up']" type="button">Sign Up</button>
+                <a class="forgot-anchor" href="#"x>Forgot Your Password?</a>
+            </div>
+        </form>        
+        <div class="gallery">
+            <app-gallery></app-gallery>
+        </div>
+    </div>
+</div>

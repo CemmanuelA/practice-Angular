@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="header">
+        <h1>SOUNDCLOUDIFY</h1>
+    </div>
+    <form class="form-content" autocomplete="off" [formGroup]="signUpForm">
+        <p class="form-title">Registrarse </p>
+        <div class="fields-container">
+            <div class="fields">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Full name </mat-label>
+                    <input matInput formControlName="name" [errorStateMatcher]="myErrorStateMatcher">
+                    <mat-error *ngIf="signUpForm.controls.name.hasError('required')">
+                        required Field!
+                    </mat-error>
+                    <mat-error *ngIf="signUpForm.controls.name.hasError('minlength')">
+                        minimum 6 characters
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Document type</mat-label>
+                    <mat-select formControlName="documentType">
+                        <mat-option value="cc">C.C.</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="signUpForm.controls.documentType.hasError('required')">
+                        required Field!
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field  appearance="outline">
+                    <mat-label> Document </mat-label>
+                    <input matInput formControlName="document" [errorStateMatcher]="myErrorStateMatcher">
+                    <mat-error *ngIf="signUpForm.controls.document.hasError('required')">
+                        required Field!
+                    </mat-error>
+                    <mat-error *ngIf="signUpForm.hasError('documentInvalid') && 
+                                      signUpForm.controls.documentType.value === 'cc' && 
+                                      !signUpForm.controls.document.hasError('required') ">
+                        Document have to has 10 numbers
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="fields">
+                <mat-form-field  appearance="outline">
+                    <mat-label> Enter your email </mat-label>
+                    <input matInput formControlName="email" [errorStateMatcher]="myErrorStateMatcher">
+                    <mat-error *ngIf="signUpForm.controls.email.hasError('required')">
+                        required Field!
+                    </mat-error>
+                    <mat-error *ngIf="signUpForm.controls.email.hasError('pattern')">
+                        Invalid email
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput type="password" formControlName="password" [errorStateMatcher]="myErrorStateMatcher">
+                    <mat-error *ngIf="signUpForm.controls.password.hasError('required')">
+                        required Field!
+                    </mat-error>
+                    <mat-error *ngIf="signUpForm.controls.password.hasError('minlength')">
+                        Minimum 6 characters
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label>Confirm password</mat-label>
+                    <input matInput type="password" formControlName="confirmedPassword" [errorStateMatcher]="myErrorStateMatcher">
+                    <mat-error *ngIf="signUpForm.controls.confirmedPassword.hasError('required')">
+                        required Field!
+                    </mat-error>
+                    <mat-error *ngIf="signUpForm.hasError('confirmedPassword')">
+                        The password do not match
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="btn-container">
+            <div>
+                <button mat-raised-button 
+                    color="primary" 
+                    class="btn-login"
+                    type="button"
+                    id="btn-signUp"
+                    [disabled]="!signUpForm.valid"
+                    (click)="register()">
+                    Sign Up
+                </button>
+                <button mat-raised-button 
+                    color="accent" 
+                    class="btn-login"
+                    id="btn-back"
+                    [routerLink]="['/login']"
+                    type="button">
+                    Go back
+                </button>
+            </div>
+        </div>
+    </form>        
+</div>

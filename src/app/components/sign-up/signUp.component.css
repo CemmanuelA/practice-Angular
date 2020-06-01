@@ -1,0 +1,102 @@
+h1 {
+    font-size: 50pt;
+    font-family: 'Fredoka One';
+    letter-spacing: 8px;
+    color: #22c0f5;
+    text-shadow: 1px 6px 8px #08076C;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    display: flex;  
+    justify-content: space-around;
+    flex-direction: column;
+}
+.form-content p {
+    letter-spacing: 2px ;
+    padding-left: 4.5rem;
+    font-size: 24pt;
+}
+
+
+
+.fields-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 0.4;
+}
+
+
+
+/*FORM INPUT*/
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #22c0f5 !important;
+  }
+
+::ng-deep .mat-form-field-label {
+    color: #97dde8 !important;
+    /* color: #22c0f5 !important; */
+}
+
+::ng-deep .mat-select-value {
+    color: #97dde8 !important;
+}
+
+::ng-deep .mat-select-arrow {
+    color:  #97dde8 !important;
+}
+  /* Font color */
+input.mat-input-element {
+    color: #97dde8;
+    /* color: #22c0f5; */
+}
+
+.eye-icon {
+    color: #22c0f5;
+    /* color: #22c0f5; */
+}
+
+/*FORM INPUT*/
+
+.btn-container {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-container > div {
+    flex: 0.4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 2.5rem;
+}
+
+.btn-login {
+    height: 50px;
+    border-radius: 25px;
+    letter-spacing: 1px;
+    flex: 0.4;
+}
+
+
+
